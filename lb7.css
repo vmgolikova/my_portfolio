@@ -1,0 +1,263 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background: #1a1a1a;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2d2d2d;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 0;
+    border-bottom: 2px solid #404040;
+    margin-bottom: 40px;
+}
+
+.photo-container {
+    flex-shrink: 0;
+}
+
+.photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #d8a8c8;
+    box-shadow: 0 4px 15px rgba(216, 168, 200, 0.2);
+}
+
+.header-text h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    color: #b0b0b0;
+    font-weight: 300;
+}
+
+/* Основной контент */
+.main-content {
+    padding: 20px 0;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+
+.section h2 {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #d8a8c8;
+    display: inline-block;
+}
+
+.section p {
+    font-size: 1.1em;
+    color: #cccccc;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Сетка навыков */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.skill-card {
+    background: #3d3d3d;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #d8a8c8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.skill-card ul {
+    list-style: none;
+}
+
+.skill-card li {
+    padding: 8px 0;
+    color: #cccccc;
+    border-bottom: 1px solid #404040;
+    position: relative;
+    padding-left: 20px;
+}
+
+.skill-card li:before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #d8a8c8;
+    font-weight: bold;
+}
+
+.skill-card li:last-child {
+    border-bottom: none;
+}
+
+/* Секция портфолио */
+.portfolio-link {
+    text-align: center;
+    background: #3d3d3d;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px dashed #404040;
+}
+
+.portfolio-button {
+    display: inline-block;
+    background: #d8a8c8;
+    color: #2d2d2d;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(216, 168, 200, 0.3);
+}
+
+.portfolio-button:hover {
+    background: #c895b5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(216, 168, 200, 0.4);
+}
+
+/* Секция Figma */
+.figma-section {
+    background: #3d3d3d;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid #d8a8c8;
+}
+
+.figma-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #d8a8c8;
+    color: #2d2d2d;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+/* Подвал */
+.footer {
+    background: #1a1a1a;
+    color: #b0b0b0;
+    padding: 30px 0;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 40px;
+    border: 1px solid #404040;
+}
+
+.contact-info {
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    color: #cccccc;
+}
+
+.copyright {
+    color: #888888;
+    font-size: 0.9em;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .header-text h1 {
+        font-size: 2em;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .section h2 {
+        font-size: 1.7em;
+    }
+}
+
+/* Стили для секции "Технологии и стек" */
+.tech-stack {
+    background: #3d3d3d;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid #404040;
+}
+
+.tech-stack h3 {
+    color: #d8a8c8;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.tech-stack p {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.tech-stack strong {
+    color: #ffffff;
+}
